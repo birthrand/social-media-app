@@ -42,7 +42,7 @@
 </head>
 <body class="bg-dark text-gray-200 font-inter min-h-screen">
     <!-- Navigation Bar -->
-<nav class="fixed top-0 w-full glass-effect z-50 px-4 py-3">
+    <nav class="fixed top-0 w-full glass-effect z-50 px-4 py-3">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <a href="index.html" class="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">
                 SocialApp
@@ -118,7 +118,7 @@
                 <div class="glass-effect rounded-xl p-4">
                     <h2 class="font-semibold mb-4 text-center">Categories</h2>
                     <div class="space-y-2">
-                        <a href="#" class="flex items-center justify-between p-2 hover:bg-dark-accent rounded-lg transition-colors">
+                        <a href="categories/tech-industry.html" class="flex items-center justify-between p-2 hover:bg-dark-accent rounded-lg transition-colors">
                             <span>Tech Industry</span>
                             <span class="text-purple-500">1.2k</span>
                         </a>
@@ -154,14 +154,29 @@
                         </div>
                     </div>
                     <!-- Story Items -->
-                    <div class="flex-shrink-0 story-gradient p-[2px] rounded-full w-20 h-20 cursor-pointer hover-scale">
-                        <img src="https://i.pravatar.cc/150?img=1" alt="Story" class="rounded-full w-full h-full object-cover">
+                    <div class="flex-shrink-0 story-gradient p-[2px] rounded-full w-20 h-20 cursor-pointer hover-scale" onclick="openStory(0)">
+                        <div class="relative w-full h-full">
+                            <img src="https://i.pravatar.cc/150?img=1" alt="Sarah Johnson's Story" class="rounded-full w-full h-full object-cover">
+                            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1 text-xs text-white font-medium">
+                                Sarah
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex-shrink-0 story-gradient p-[2px] rounded-full w-20 h-20 cursor-pointer hover-scale">
-                        <img src="https://i.pravatar.cc/150?img=2" alt="Story" class="rounded-full w-full h-full object-cover">
+                    <div class="flex-shrink-0 story-gradient p-[2px] rounded-full w-20 h-20 cursor-pointer hover-scale" onclick="openStory(1)">
+                        <div class="relative w-full h-full">
+                            <img src="https://i.pravatar.cc/150?img=2" alt="Alex Turner's Story" class="rounded-full w-full h-full object-cover">
+                            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1 text-xs text-white font-medium">
+                                Alex
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex-shrink-0 story-gradient p-[2px] rounded-full w-20 h-20 cursor-pointer hover-scale">
-                        <img src="https://i.pravatar.cc/150?img=3" alt="Story" class="rounded-full w-full h-full object-cover">
+                    <div class="flex-shrink-0 story-gradient p-[2px] rounded-full w-20 h-20 cursor-pointer hover-scale" onclick="openStory(2)">
+                        <div class="relative w-full h-full">
+                            <img src="https://i.pravatar.cc/150?img=3" alt="Tech Insider's Story" class="rounded-full w-full h-full object-cover">
+                            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1 text-xs text-white font-medium">
+                                Tech
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -293,5 +308,9 @@
     <button class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow">
         <i class="fas fa-plus text-2xl"></i>
     </button>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/stories.js"></script>
 </body>
 </html>
