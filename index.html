@@ -60,28 +60,21 @@
                 <button class="hover:text-purple-500 transition-colors">
                     <i class="fas fa-envelope text-xl"></i>
                 </button>
-                <div class="relative group">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-[2px] cursor-pointer">
-                            <img src="https://i.pravatar.cc/150?img=32" alt="Profile" class="rounded-full w-full h-full object-cover">
-                        </div>
-                        <div class="absolute right-0 mt-2 w-48 glass-effect rounded-xl py-2 invisible group-hover:visible">
-                            <a href="#" class="block px-4 py-2 hover:bg-dark-accent">Profile</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-dark-accent">Settings</a>
-                            <hr class="border-gray-600 my-2">
-                            <a href="login.html" class="block px-4 py-2 hover:bg-dark-accent text-red-400">Sign Out</a>
-                        </div>
+                <a href="profile.html" class="block">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-[2px] cursor-pointer">
+                        <img src="https://i.pravatar.cc/150?img=32" alt="Profile" class="rounded-full w-full h-full object-cover">
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <div class="pt-20 pb-8 max-w-7xl mx-auto px-4">
+    <div class="pt-16 pb-8 max-w-7xl mx-auto px-4">
         <div class="flex gap-6">
-            <!-- Left Sidebar - Trending Gossip -->
-            <div class="w-80 hidden lg:block">
-                <div class="glass-effect rounded-xl p-4 sticky top-24">
+            <!-- Left Sidebar -->
+            <div class="w-80 hidden lg:block h-[calc(100vh-4rem)] overflow-y-auto pb-6 space-y-6">
+                <div class="glass-effect rounded-xl p-4">
                     <h2 class="font-semibold mb-4 text-center">Trending Gossip</h2>
                     <div class="space-y-4 flex flex-col items-center">
                         <div class="hover:bg-dark-accent rounded-lg p-2 transition-colors cursor-pointer w-full">
@@ -109,7 +102,7 @@
                 </div>
 
                 <!-- Recent Gossip Panel -->
-                <div class="glass-effect rounded-xl p-4 sticky top-96 mt-6">
+                <div class="glass-effect rounded-xl p-4 mt-6">
                     <h2 class="font-semibold mb-4 text-center">Recent Gossip</h2>
                     <div class="space-y-4 flex flex-col items-center">
                         <div class="hover:bg-dark-accent rounded-lg p-2 transition-colors cursor-pointer w-full">

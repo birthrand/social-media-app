@@ -29,80 +29,81 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .bg-pattern {
-            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
     </style>
 </head>
-<body class="bg-dark text-gray-200 font-inter min-h-screen bg-pattern flex items-center justify-center">
-    <div class="w-full max-w-md p-8">
+<body class="bg-dark text-gray-200 font-inter min-h-screen flex items-center justify-center">
+    <div class="w-full max-w-md p-4">
         <!-- Logo -->
         <div class="text-center mb-8">
             <h1 class="text-4xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">
                 SocialApp
             </h1>
-            <p class="text-gray-400 mt-2">Welcome back! Please login to continue.</p>
+            <p class="text-gray-400 mt-2">Connect with creative minds</p>
         </div>
 
         <!-- Login Form -->
-        <div class="glass-effect rounded-xl p-6 space-y-6">
-            <div class="space-y-4">
+        <div class="glass-effect rounded-xl p-6">
+            <form class="space-y-6">
                 <div>
                     <label class="block text-sm font-medium mb-2">Email</label>
                     <div class="relative">
-                        <input type="email" 
-                               class="w-full bg-dark-lighter rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-purple-500 pl-10"
-                               placeholder="Enter your email">
-                        <i class="fas fa-envelope absolute left-3 top-3.5 text-gray-400"></i>
+                        <i class="fas fa-envelope absolute left-3 top-3 text-gray-400"></i>
+                        <input type="email" placeholder="Enter your email" class="w-full bg-dark-lighter rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-purple-500">
                     </div>
                 </div>
+
                 <div>
                     <label class="block text-sm font-medium mb-2">Password</label>
                     <div class="relative">
-                        <input type="password" 
-                               class="w-full bg-dark-lighter rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-purple-500 pl-10"
-                               placeholder="Enter your password">
-                        <i class="fas fa-lock absolute left-3 top-3.5 text-gray-400"></i>
+                        <i class="fas fa-lock absolute left-3 top-3 text-gray-400"></i>
+                        <input type="password" placeholder="Enter your password" class="w-full bg-dark-lighter rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-purple-500">
                     </div>
                 </div>
+
+                <div class="flex items-center justify-between">
+                    <label class="flex items-center">
+                        <input type="checkbox" class="w-4 h-4 rounded bg-dark-lighter border-gray-600 text-purple-500 focus:ring-purple-500">
+                        <span class="ml-2 text-sm text-gray-400">Remember me</span>
+                    </label>
+                    <a href="#" class="text-sm text-purple-500 hover:text-purple-400">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="w-full py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg font-medium hover:opacity-90 transition-opacity">
+                    Sign In
+                </button>
+            </form>
+
+            <div class="mt-6 text-center">
+                <p class="text-gray-400">
+                    Don't have an account? 
+                    <a href="register.html" class="text-purple-500 hover:text-purple-400 font-medium">Sign Up</a>
+                </p>
             </div>
 
-            <div class="flex items-center justify-between">
-                <label class="flex items-center">
-                    <input type="checkbox" class="rounded bg-dark-lighter border-gray-600 text-purple-500 focus:ring-purple-500">
-                    <span class="ml-2 text-sm text-gray-400">Remember me</span>
-                </label>
-                <a href="#" class="text-sm text-purple-500 hover:text-purple-400">Forgot password?</a>
-            </div>
+            <!-- Social Login -->
+            <div class="mt-6">
+                <div class="relative">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-600"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-dark text-gray-400">Or continue with</span>
+                    </div>
+                </div>
 
-            <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg py-3 font-medium hover:opacity-90 transition-opacity">
-                Sign In
-            </button>
-
-            <div class="relative flex items-center justify-center">
-                <hr class="w-full border-gray-600">
-                <span class="absolute bg-dark px-4 text-sm text-gray-400">or continue with</span>
-            </div>
-
-            <div class="grid grid-cols-3 gap-4">
-                <button class="glass-effect rounded-lg p-3 hover:opacity-80 transition-opacity flex items-center justify-center">
-                    <i class="fab fa-google text-xl"></i>
-                </button>
-                <button class="glass-effect rounded-lg p-3 hover:opacity-80 transition-opacity flex items-center justify-center">
-                    <i class="fab fa-facebook text-xl"></i>
-                </button>
-                <button class="glass-effect rounded-lg p-3 hover:opacity-80 transition-opacity flex items-center justify-center">
-                    <i class="fab fa-twitter text-xl"></i>
-                </button>
+                <div class="mt-6 grid grid-cols-3 gap-3">
+                    <button class="glass-effect flex justify-center items-center py-2 px-4 rounded-lg hover:bg-dark-accent transition-colors">
+                        <i class="fab fa-google text-xl"></i>
+                    </button>
+                    <button class="glass-effect flex justify-center items-center py-2 px-4 rounded-lg hover:bg-dark-accent transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </button>
+                    <button class="glass-effect flex justify-center items-center py-2 px-4 rounded-lg hover:bg-dark-accent transition-colors">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </button>
+                </div>
             </div>
         </div>
-
-        <!-- Register Link -->
-        <p class="text-center mt-6 text-gray-400">
-            Don't have an account? 
-            <a href="register.html" class="text-purple-500 hover:text-purple-400">Sign up</a>
-        </p>
     </div>
 </body>
 </html>

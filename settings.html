@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - SocialApp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'dark': '#121212',
+                        'dark-lighter': '#1E1E1E',
+                        'dark-accent': '#2D2D2D',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-dark text-gray-200 font-inter min-h-screen">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full glass-effect z-50 px-4 py-3">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">
+                SocialApp
+            </a>
+            <div class="flex-1 max-w-xl mx-8">
+                <div class="relative">
+                    <input type="text" placeholder="Search..." class="w-full bg-dark-lighter rounded-full py-2 px-6 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    <i class="fas fa-search absolute right-4 top-3 text-gray-400"></i>
+                </div>
+            </div>
+            <div class="flex items-center space-x-6">
+                <button class="hover:text-purple-500 transition-colors">
+                    <i class="fas fa-bell text-xl"></i>
+                </button>
+                <button class="hover:text-purple-500 transition-colors">
+                    <i class="fas fa-envelope text-xl"></i>
+                </button>
+                <div class="relative group">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-[2px] cursor-pointer">
+                        <img src="https://i.pravatar.cc/150?img=32" alt="Profile" class="rounded-full w-full h-full object-cover">
+                    </div>
+                    <div class="absolute right-0 mt-2 w-48 glass-effect rounded-xl py-2 invisible group-hover:visible">
+                        <a href="profile.html" class="block px-4 py-2 hover:bg-dark-accent">Profile</a>
+                        <a href="settings.html" class="block px-4 py-2 hover:bg-dark-accent">Settings</a>
+                        <hr class="border-gray-600 my-2">
+                        <a href="login.html" class="block px-4 py-2 hover:bg-dark-accent text-red-400">Sign Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="pt-16 pb-8 max-w-3xl mx-auto px-4">
+        <div class="glass-effect rounded-xl p-6">
+            <h1 class="text-2xl font-bold mb-6">Settings</h1>
+            
+            <!-- Account Settings -->
+            <div class="space-y-6">
+                <div class="glass-effect rounded-lg p-4">
+                    <h2 class="text-lg font-semibold mb-4">Account Settings</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" value="emma.wilson@example.com" class="w-full bg-dark-lighter rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Password</label>
+                            <button class="px-4 py-2 bg-dark-accent rounded-lg hover:bg-opacity-80 transition-colors">
+                                Change Password
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Privacy Settings -->
+                <div class="glass-effect rounded-lg p-4">
+                    <h2 class="text-lg font-semibold mb-4">Privacy</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h3 class="font-medium">Private Account</h3>
+                                <p class="text-sm text-gray-400">Only approved followers can see your posts</p>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" class="sr-only peer">
+                                <div class="w-11 h-6 bg-dark-accent rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-purple-500"></div>
+                            </label>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h3 class="font-medium">Show Activity Status</h3>
+                                <p class="text-sm text-gray-400">Let others see when you're active</p>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" checked class="sr-only peer">
+                                <div class="w-11 h-6 bg-dark-accent rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-purple-500"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification Settings -->
+                <div class="glass-effect rounded-lg p-4">
+                    <h2 class="text-lg font-semibold mb-4">Notifications</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h3 class="font-medium">Push Notifications</h3>
+                                <p class="text-sm text-gray-400">Get notified about new activity</p>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" checked class="sr-only peer">
+                                <div class="w-11 h-6 bg-dark-accent rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-purple-500"></div>
+                            </label>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h3 class="font-medium">Email Notifications</h3>
+                                <p class="text-sm text-gray-400">Receive email updates</p>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" checked class="sr-only peer">
+                                <div class="w-11 h-6 bg-dark-accent rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-purple-500"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Save Button -->
+                <div class="flex justify-end pt-4">
+                    <button class="px-6 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg font-medium hover:opacity-90 transition-opacity">
+                        Save Changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
