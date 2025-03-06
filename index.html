@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'dark': '#121212',
+                        'dark-lighter': '#1E1E1E',
+                        'dark-accent': '#2D2D2D',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .story-gradient {
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+        }
+        .hover-scale {
+            transition: transform 0.2s;
+        }
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-dark text-gray-200 font-inter min-h-screen">
+    <!-- Navigation Bar -->
+<nav class="fixed top-0 w-full glass-effect z-50 px-4 py-3">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">
+                SocialApp
+            </a>
+            <div class="flex-1 max-w-xl mx-8">
+                <div class="relative">
+                    <input type="text" placeholder="Search..." class="w-full bg-dark-lighter rounded-full py-2 px-6 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    <i class="fas fa-search absolute right-4 top-3 text-gray-400"></i>
+                </div>
+            </div>
+            <div class="flex items-center space-x-6">
+                <button class="hover:text-purple-500 transition-colors">
+                    <i class="fas fa-bell text-xl"></i>
+                </button>
+                <button class="hover:text-purple-500 transition-colors">
+                    <i class="fas fa-envelope text-xl"></i>
+                </button>
+                <div class="relative group">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-[2px] cursor-pointer">
+                            <img src="https://i.pravatar.cc/150?img=32" alt="Profile" class="rounded-full w-full h-full object-cover">
+                        </div>
+                        <div class="absolute right-0 mt-2 w-48 glass-effect rounded-xl py-2 invisible group-hover:visible">
+                            <a href="#" class="block px-4 py-2 hover:bg-dark-accent">Profile</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-dark-accent">Settings</a>
+                            <hr class="border-gray-600 my-2">
+                            <a href="login.html" class="block px-4 py-2 hover:bg-dark-accent text-red-400">Sign Out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="pt-20 pb-8 max-w-7xl mx-auto px-4">
+        <div class="flex gap-6">
+            <!-- Left Sidebar - Trending Gossip -->
+            <div class="w-80 hidden lg:block">
+                <div class="glass-effect rounded-xl p-4 sticky top-24">
+                    <h2 class="font-semibold mb-4 text-center">Trending Gossip</h2>
+                    <div class="space-y-4 flex flex-col items-center">
+                        <div class="hover:bg-dark-accent rounded-lg p-2 transition-colors cursor-pointer w-full">
+                            <p class="font-medium text-left">Sarah and Mike's Startup Drama</p>
+                            <div class="flex items-center justify-between mt-1">
+                                <span class="text-gray-400 text-sm">Tech Industry</span>
+                                <span class="text-purple-500 text-sm">4.2k views</span>
+                            </div>
+                        </div>
+                        <div class="hover:bg-dark-accent rounded-lg p-2 transition-colors cursor-pointer w-full">
+                            <p class="font-medium text-left">New Design Tool Controversy</p>
+                            <div class="flex items-center justify-between mt-1">
+                                <span class="text-gray-400 text-sm">Design World</span>
+                                <span class="text-purple-500 text-sm">3.8k views</span>
+                            </div>
+                        </div>
+                        <div class="hover:bg-dark-accent rounded-lg p-2 transition-colors cursor-pointer w-full">
+                            <p class="font-medium text-left">Photography Awards Scandal</p>
+                            <div class="flex items-center justify-between mt-1">
+                                <span class="text-gray-400 text-sm">Photography</span>
+                                <span class="text-purple-500 text-sm">2.9k views</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Gossip Panel -->
+                <div class="glass-effect rounded-xl p-4 sticky top-96 mt-6">
+                    <h2 class="font-semibold mb-4 text-center">Recent Gossip</h2>
+                    <div class="space-y-4 flex flex-col items-center">
+                        <div class="hover:bg-dark-accent rounded-lg p-2 transition-colors cursor-pointer w-full">
+                            <p class="font-medium text-left">New AI Tool Launch Delayed</p>
+                            <div class="flex items-center justify-between mt-1">
+                                <span class="text-gray-400 text-sm">Tech News</span>
+                                <span class="text-purple-500 text-sm">8 min ago</span>
+                            </div>
+                        </div>
+                        <div class="hover:bg-dark-accent rounded-lg p-2 transition-colors cursor-pointer w-full">
+                            <p class="font-medium text-left">Creative Studio Rebranding</p>
+                            <div class="flex items-center justify-between mt-1">
+                                <span class="text-gray-400 text-sm">Design</span>
+                                <span class="text-purple-500 text-sm">15 min ago</span>
+                            </div>
+                        </div>
+                        <div class="hover:bg-dark-accent rounded-lg p-2 transition-colors cursor-pointer w-full">
+                            <p class="font-medium text-left">Street Photography Exhibition</p>
+                            <div class="flex items-center justify-between mt-1">
+                                <span class="text-gray-400 text-sm">Arts</span>
+                                <span class="text-purple-500 text-sm">32 min ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Feed -->
+            <div class="flex-1">
+                <!-- Stories -->
+                <div class="mb-8 overflow-x-auto flex justify-center space-x-4 pb-4">
+                    <div class="flex-shrink-0 story-gradient p-[2px] rounded-full w-20 h-20 cursor-pointer hover-scale">
+                        <div class="bg-dark-lighter rounded-full p-1 w-full h-full">
+                            <div class="bg-purple-500 rounded-full w-full h-full flex items-center justify-center">
+                                <i class="fas fa-plus text-2xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Story Items -->
+                    <div class="flex-shrink-0 story-gradient p-[2px] rounded-full w-20 h-20 cursor-pointer hover-scale">
+                        <img src="https://i.pravatar.cc/150?img=1" alt="Story" class="rounded-full w-full h-full object-cover">
+                    </div>
+                    <div class="flex-shrink-0 story-gradient p-[2px] rounded-full w-20 h-20 cursor-pointer hover-scale">
+                        <img src="https://i.pravatar.cc/150?img=2" alt="Story" class="rounded-full w-full h-full object-cover">
+                    </div>
+                    <div class="flex-shrink-0 story-gradient p-[2px] rounded-full w-20 h-20 cursor-pointer hover-scale">
+                        <img src="https://i.pravatar.cc/150?img=3" alt="Story" class="rounded-full w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Posts -->
+                <div class="space-y-6">
+                    <!-- Post Card -->
+                    <div class="glass-effect rounded-xl p-4 hover-scale">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.pravatar.cc/150?img=4" alt="User" class="w-10 h-10 rounded-full">
+                            <div class="ml-3">
+                                <h3 class="font-semibold">Sarah Johnson</h3>
+                                <p class="text-sm text-gray-400">2 hours ago</p>
+                            </div>
+                        </div>
+                        <p class="mb-4">Just finished my latest design project! 🎨 What do you think?</p>
+                        <img src="https://picsum.photos/seed/1/600/400" alt="Post" class="rounded-lg w-full mb-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex space-x-4">
+                                <button class="flex items-center space-x-2 hover:text-purple-500 transition-colors">
+                                    <i class="far fa-heart"></i>
+                                    <span>2.5k</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-purple-500 transition-colors">
+                                    <i class="far fa-comment"></i>
+                                    <span>482</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-purple-500 transition-colors">
+                                    <i class="far fa-share-square"></i>
+                                    <span>Share</span>
+                                </button>
+                            </div>
+                            <button class="hover:text-purple-500 transition-colors">
+                                <i class="far fa-bookmark"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Another Post -->
+                    <div class="masonry-item glass-effect rounded-xl p-4 hover-scale">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.pravatar.cc/150?img=5" alt="User" class="w-10 h-10 rounded-full">
+                            <div class="ml-3">
+                                <h3 class="font-semibold">Alex Turner</h3>
+                                <p class="text-sm text-gray-400">5 hours ago</p>
+                            </div>
+                        </div>
+                        <p class="mb-4">Amazing sunset at the beach today! 🌅 #nature #photography</p>
+                        <img src="https://picsum.photos/seed/2/600/400" alt="Post" class="rounded-lg w-full mb-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex space-x-4">
+                                <button class="flex items-center space-x-2 hover:text-purple-500 transition-colors">
+                                    <i class="far fa-heart"></i>
+                                    <span>1.8k</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-purple-500 transition-colors">
+                                    <i class="far fa-comment"></i>
+                                    <span>324</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-purple-500 transition-colors">
+                                    <i class="far fa-share-square"></i>
+                                    <span>Share</span>
+                                </button>
+                            </div>
+                            <button class="hover:text-purple-500 transition-colors">
+                                <i class="far fa-bookmark"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="w-80 hidden lg:block">
+                <div class="glass-effect rounded-xl p-4 sticky top-24">
+                    <h2 class="font-semibold mb-4">Trending Communities</h2>
+                    <div class="space-y-4">
+                    <a href="design-community.html" class="block hover:bg-dark-accent rounded-lg p-2 transition-colors">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <span>Design</span>
+                            <span class="text-gray-400 text-sm">24.5k posts</span>
+                        </div>
+                    </a>
+                    <a href="tech-community.html" class="block hover:bg-dark-accent rounded-lg p-2 transition-colors">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-pink-500 rounded-full"></div>
+                            <span>Technology</span>
+                            <span class="text-gray-400 text-sm">18.2k posts</span>
+                        </div>
+                    </a>
+                    <a href="photography-community.html" class="block hover:bg-dark-accent rounded-lg p-2 transition-colors">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span>Photography</span>
+                            <span class="text-gray-400 text-sm">12.8k posts</span>
+                        </div>
+                    </a>
+                    </div>
+
+                    <h2 class="font-semibold mt-8 mb-4">Suggested Users</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <img src="https://i.pravatar.cc/150?img=6" alt="User" class="w-10 h-10 rounded-full">
+                                <div>
+                                    <h3 class="font-medium">Emma Wilson</h3>
+                                    <p class="text-sm text-gray-400">UI Designer</p>
+                                </div>
+                            </div>
+                            <button class="text-purple-500 hover:text-purple-400">Follow</button>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <img src="https://i.pravatar.cc/150?img=7" alt="User" class="w-10 h-10 rounded-full">
+                                <div>
+                                    <h3 class="font-medium">James Lee</h3>
+                                    <p class="text-sm text-gray-400">Photographer</p>
+                                </div>
+                            </div>
+                            <button class="text-purple-500 hover:text-purple-400">Follow</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <button class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow">
+        <i class="fas fa-plus text-2xl"></i>
+    </button>
+</body>
+</html>

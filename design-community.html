@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Community - SocialApp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'dark': '#121212',
+                        'dark-lighter': '#1E1E1E',
+                        'dark-accent': '#2D2D2D',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .bg-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .hover-scale {
+            transition: transform 0.2s;
+        }
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-dark text-gray-200 font-inter min-h-screen bg-pattern">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full glass-effect z-50 px-4 py-3">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">
+                SocialApp
+            </a>
+            <div class="flex-1 max-w-xl mx-8">
+                <div class="relative">
+                    <input type="text" placeholder="Search in Design..." class="w-full bg-dark-lighter rounded-full py-2 px-6 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    <i class="fas fa-search absolute right-4 top-3 text-gray-400"></i>
+                </div>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="community.html" class="hover:text-purple-500 transition-colors">
+                    <i class="fas fa-users text-xl"></i>
+                </a>
+                <button class="hover:text-purple-500 transition-colors">
+                    <i class="fas fa-bell text-xl"></i>
+                </button>
+                <div class="relative group">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-[2px] cursor-pointer">
+                        <img src="https://i.pravatar.cc/150?img=32" alt="Profile" class="rounded-full w-full h-full object-cover">
+                    </div>
+                    <div class="absolute right-0 mt-2 w-48 glass-effect rounded-xl py-2 invisible group-hover:visible">
+                        <a href="#" class="block px-4 py-2 hover:bg-dark-accent">Profile</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-dark-accent">Settings</a>
+                        <hr class="border-gray-600 my-2">
+                        <a href="login.html" class="block px-4 py-2 hover:bg-dark-accent text-red-400">Sign Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Community Header -->
+    <div class="pt-20 pb-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-end space-x-6">
+                <div class="w-32 h-32 rounded-2xl bg-gradient-to-br from-purple-600 to-pink-400 p-1">
+                    <div class="w-full h-full rounded-2xl bg-dark flex items-center justify-center">
+                        <i class="fas fa-palette text-5xl text-white"></i>
+                    </div>
+                </div>
+                <div class="flex-1 pb-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h1 class="text-3xl font-bold">Design</h1>
+                            <p class="text-gray-400">24.5k posts • 3.8k online</p>
+                        </div>
+                        <button class="px-6 py-2 rounded-lg bg-purple-500 hover:bg-purple-600 transition-colors">
+                            Join Community
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <!-- Left Sidebar -->
+        <div class="lg:col-span-1 space-y-6">
+            <!-- About -->
+            <div class="glass-effect rounded-xl p-6">
+                <h3 class="font-semibold mb-4">About Design Community</h3>
+                <p class="text-gray-400 mb-4">A creative space for designers to share their work, get inspiration, and discuss design trends and techniques.</p>
+                <div class="space-y-3">
+                    <div class="flex items-center space-x-2 text-gray-400">
+                        <i class="fas fa-calendar"></i>
+                        <span>Created Feb 2024</span>
+                    </div>
+                    <div class="flex items-center space-x-2 text-gray-400">
+                        <i class="fas fa-palette"></i>
+                        <span>24.5k posts this month</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design Categories -->
+            <div class="glass-effect rounded-xl p-6">
+                <h3 class="font-semibold mb-4">Design Categories</h3>
+                <div class="space-y-2">
+                    <a href="#" class="block px-3 py-2 rounded-lg hover:bg-dark-accent transition-colors">
+                        <div class="flex items-center justify-between">
+                            <span>UI/UX Design</span>
+                            <span class="text-gray-400 text-sm">8.2k posts</span>
+                        </div>
+                    </a>
+                    <a href="#" class="block px-3 py-2 rounded-lg hover:bg-dark-accent transition-colors">
+                        <div class="flex items-center justify-between">
+                            <span>Graphic Design</span>
+                            <span class="text-gray-400 text-sm">6.5k posts</span>
+                        </div>
+                    </a>
+                    <a href="#" class="block px-3 py-2 rounded-lg hover:bg-dark-accent transition-colors">
+                        <div class="flex items-center justify-between">
+                            <span>Motion Design</span>
+                            <span class="text-gray-400 text-sm">4.8k posts</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Feed -->
+        <div class="lg:col-span-2 space-y-6">
+            <!-- Create Post -->
+            <div class="glass-effect rounded-xl p-4">
+                <div class="flex items-center space-x-4">
+                    <img src="https://i.pravatar.cc/150?img=32" alt="User" class="w-10 h-10 rounded-full">
+                    <input type="text" placeholder="Share your design work..." class="flex-1 bg-dark-lighter rounded-full py-2 px-4 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    <button class="p-2 rounded-full hover:bg-dark-accent transition-colors">
+                        <i class="fas fa-image text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Posts -->
+            <div class="space-y-6">
+                <!-- Design Post 1 -->
+                <div class="glass-effect rounded-xl p-4">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="https://i.pravatar.cc/150?img=23" alt="User" class="w-10 h-10 rounded-full">
+                        <div>
+                            <p class="font-medium">Creative Mind</p>
+                            <p class="text-sm text-gray-400">1 hour ago</p>
+                        </div>
+                    </div>
+                    <p class="mb-4">New mobile app design concept. Focused on clean, minimal interface with bold typography. #UIDesign #MobileApp</p>
+                    <img src="https://picsum.photos/seed/4/600/400" alt="Design" class="rounded-lg w-full mb-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex space-x-4">
+                            <button class="flex items-center space-x-2 hover:text-purple-500 transition-colors">
+                                <i class="far fa-heart"></i>
+                                <span>4.2k</span>
+                            </button>
+                            <button class="flex items-center space-x-2 hover:text-purple-500 transition-colors">
+                                <i class="far fa-comment"></i>
+                                <span>156</span>
+                            </button>
+                            <button class="flex items-center space-x-2 hover:text-purple-500 transition-colors">
+                                <i class="far fa-share-square"></i>
+                                <span>Share</span>
+                            </button>
+                        </div>
+                        <button class="hover:text-purple-500 transition-colors">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Design Post 2 -->
+                <div class="glass-effect rounded-xl p-4">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="https://i.pravatar.cc/150?img=24" alt="User" class="w-10 h-10 rounded-full">
+                        <div>
+                            <p class="font-medium">Design Explorer</p>
+                            <p class="text-sm text-gray-400">3 hours ago</p>
+                        </div>
+                    </div>
+                    <p class="mb-4">Brand identity exploration for a sustainable fashion brand. Looking for feedback on the color palette.</p>
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <img src="https://picsum.photos/seed/5/300/300" alt="Design" class="rounded-lg w-full">
+                        <img src="https://picsum.photos/seed/6/300/300" alt="Design" class="rounded-lg w-full">
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex space-x-4">
+                            <button class="flex items-center space-x-2 hover:text-purple-500 transition-colors">
+                                <i class="far fa-heart"></i>
+                                <span>2.8k</span>
+                            </button>
+                            <button class="flex items-center space-x-2 hover:text-purple-500 transition-colors">
+                                <i class="far fa-comment"></i>
+                                <span>234</span>
+                            </button>
+                            <button class="flex items-center space-x-2 hover:text-purple-500 transition-colors">
+                                <i class="far fa-share-square"></i>
+                                <span>Share</span>
+                            </button>
+                        </div>
+                        <button class="hover:text-purple-500 transition-colors">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="lg:col-span-1 space-y-6">
+            <!-- Design Tools -->
+            <div class="glass-effect rounded-xl p-6">
+                <h3 class="font-semibold mb-4">Popular Design Tools</h3>
+                <div class="space-y-4">
+                    <a href="#" class="block hover:bg-dark-accent p-3 rounded-lg transition-colors">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
+                                <i class="fab fa-figma"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">Figma Resources</p>
+                                <p class="text-sm text-gray-400">UI Kits & Templates</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="block hover:bg-dark-accent p-3 rounded-lg transition-colors">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-500 to-red-500 flex items-center justify-center">
+                                <i class="fas fa-swatchbook"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">Color Palettes</p>
+                                <p class="text-sm text-gray-400">Trending combinations</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Design Challenges -->
+            <div class="glass-effect rounded-xl p-6">
+                <h3 class="font-semibold mb-4">Weekly Challenges</h3>
+                <div class="space-y-4">
+                    <div class="hover:bg-dark-accent p-3 rounded-lg transition-colors cursor-pointer">
+                        <p class="font-medium">Mobile App Redesign</p>
+                        <p class="text-sm text-gray-400">Ends in 3 days</p>
+                        <div class="flex items-center space-x-2 mt-2">
+                            <span class="px-2 py-1 rounded-full bg-purple-500/20 text-purple-400 text-sm">UI Challenge</span>
+                            <span class="text-sm text-gray-400">126 submissions</span>
+                        </div>
+                    </div>
+                    <div class="hover:bg-dark-accent p-3 rounded-lg transition-colors cursor-pointer">
+                        <p class="font-medium">Logo Animation</p>
+                        <p class="text-sm text-gray-400">Ends in 5 days</p>
+                        <div class="flex items-center space-x-2 mt-2">
+                            <span class="px-2 py-1 rounded-full bg-pink-500/20 text-pink-400 text-sm">Motion</span>
+                            <span class="text-sm text-gray-400">84 submissions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
