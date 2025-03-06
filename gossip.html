@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gossip - SocialApp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'dark': '#121212',
+                        'dark-lighter': '#1E1E1E',
+                        'dark-accent': '#2D2D2D',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hover-scale {
+            transition: transform 0.2s;
+        }
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-dark text-gray-200 font-inter min-h-screen">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full glass-effect z-50 px-4 py-3">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">
+                SocialApp
+            </a>
+            <div class="flex-1 max-w-xl mx-8">
+                <div class="relative">
+                    <input type="text" placeholder="Search gossips..." class="w-full bg-dark-lighter rounded-full py-2 px-6 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    <i class="fas fa-search absolute right-4 top-3 text-gray-400"></i>
+                </div>
+            </div>
+            <div class="flex items-center space-x-6">
+                <button class="hover:text-purple-500 transition-colors">
+                    <i class="fas fa-bell text-xl"></i>
+                </button>
+                <button class="hover:text-purple-500 transition-colors">
+                    <i class="fas fa-envelope text-xl"></i>
+                </button>
+                <a href="profile.html" class="block">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-[2px] cursor-pointer">
+                        <img src="https://i.pravatar.cc/150?img=32" alt="Profile" class="rounded-full w-full h-full object-cover">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="pt-20 pb-8 max-w-7xl mx-auto px-4">
+        <div class="flex gap-6">
+            <!-- Left Sidebar -->
+            <div class="w-80 hidden lg:block space-y-6">
+                <!-- Trending Gossips -->
+                <div class="glass-effect rounded-xl p-4">
+                    <h2 class="font-semibold mb-4 text-center">Trending Gossips</h2>
+                    <div class="space-y-4">
+                        <div class="hover:bg-dark-accent rounded-lg p-2 transition-colors cursor-pointer">
+                            <p class="font-medium">#TechDrama</p>
+                            <div class="flex items-center justify-between mt-1">
+                                <span class="text-gray-400 text-sm">Silicon Valley</span>
+                                <span class="text-purple-500 text-sm">5.2k posts</span>
+                            </div>
+                        </div>
+                        <div class="hover:bg-dark-accent rounded-lg p-2 transition-colors cursor-pointer">
+                            <p class="font-medium">#CelebNews</p>
+                            <div class="flex items-center justify-between mt-1">
+                                <span class="text-gray-400 text-sm">Entertainment</span>
+                                <span class="text-purple-500 text-sm">3.8k posts</span>
+                            </div>
+                        </div>
+                        <div class="hover:bg-dark-accent rounded-lg p-2 transition-colors cursor-pointer">
+                            <p class="font-medium">#StartupSecrets</p>
+                            <div class="flex items-center justify-between mt-1">
+                                <span class="text-gray-400 text-sm">Business</span>
+                                <span class="text-purple-500 text-sm">2.5k posts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categories -->
+                <div class="glass-effect rounded-xl p-4">
+                    <h2 class="font-semibold mb-4 text-center">Categories</h2>
+                    <div class="space-y-2">
+                        <a href="#" class="flex items-center justify-between p-2 hover:bg-dark-accent rounded-lg transition-colors">
+                            <span>Tech Industry</span>
+                            <span class="text-purple-500">1.2k</span>
+                        </a>
+                        <a href="#" class="flex items-center justify-between p-2 hover:bg-dark-accent rounded-lg transition-colors">
+                            <span>Entertainment</span>
+                            <span class="text-purple-500">856</span>
+                        </a>
+                        <a href="#" class="flex items-center justify-between p-2 hover:bg-dark-accent rounded-lg transition-colors">
+                            <span>Business</span>
+                            <span class="text-purple-500">654</span>
+                        </a>
+                        <a href="#" class="flex items-center justify-between p-2 hover:bg-dark-accent rounded-lg transition-colors">
+                            <span>Fashion</span>
+                            <span class="text-purple-500">432</span>
+                        </a>
+                        <a href="#" class="flex items-center justify-between p-2 hover:bg-dark-accent rounded-lg transition-colors">
+                            <span>Sports</span>
+                            <span class="text-purple-500">321</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Feed -->
+            <div class="flex-1">
+                <!-- Create Gossip Button -->
+                <div class="glass-effect rounded-xl p-4 mb-6">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://i.pravatar.cc/150?img=32" alt="User" class="w-10 h-10 rounded-full">
+                        <button class="flex-1 bg-dark-lighter rounded-full py-2 px-4 text-left text-gray-400 hover:bg-dark-accent transition-colors">
+                            Share some juicy gossip...
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Gossip Posts -->
+                <div class="space-y-6">
+                    <!-- Gossip Post -->
+                    <div class="glass-effect rounded-xl p-4 hover-scale">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.pravatar.cc/150?img=45" alt="User" class="w-10 h-10 rounded-full">
+                            <div class="ml-3">
+                                <h3 class="font-semibold">Anonymous Insider</h3>
+                                <p class="text-sm text-gray-400">Tech Industry • 2 hours ago</p>
+                            </div>
+                        </div>
+                        <p class="mb-4">Heard through the grapevine that a major tech acquisition is in the works! 🤫 Sources say it could shake up the entire industry. #TechGossip #BigMoves</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex space-x-4">
+                                <button class="flex items-center space-x-2 hover:text-purple-500 transition-colors">
+                                    <i class="far fa-heart"></i>
+                                    <span>2.5k</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-purple-500 transition-colors">
+                                    <i class="far fa-comment"></i>
+                                    <span>482</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-purple-500 transition-colors">
+                                    <i class="far fa-share-square"></i>
+                                    <span>Share</span>
+                                </button>
+                            </div>
+                            <button class="hover:text-purple-500 transition-colors">
+                                <i class="far fa-bookmark"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Another Gossip Post -->
+                    <div class="glass-effect rounded-xl p-4 hover-scale">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.pravatar.cc/150?img=28" alt="User" class="w-10 h-10 rounded-full">
+                            <div class="ml-3">
+                                <h3 class="font-semibold">Industry Whispers</h3>
+                                <p class="text-sm text-gray-400">Entertainment • 5 hours ago</p>
+                            </div>
+                        </div>
+                        <p class="mb-4">Word on the street is that two A-list celebrities are secretly working on a groundbreaking project together! 🎬 Can't reveal names yet, but it's going to be HUGE! #HollywoodGossip</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex space-x-4">
+                                <button class="flex items-center space-x-2 hover:text-purple-500 transition-colors">
+                                    <i class="far fa-heart"></i>
+                                    <span>1.8k</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-purple-500 transition-colors">
+                                    <i class="far fa-comment"></i>
+                                    <span>324</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-purple-500 transition-colors">
+                                    <i class="far fa-share-square"></i>
+                                    <span>Share</span>
+                                </button>
+                            </div>
+                            <button class="hover:text-purple-500 transition-colors">
+                                <i class="far fa-bookmark"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="w-80 hidden lg:block">
+                <div class="glass-effect rounded-xl p-4 sticky top-24">
+                    <h2 class="font-semibold mb-4">Top Gossip Members</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <img src="https://i.pravatar.cc/150?img=56" alt="User" class="w-10 h-10 rounded-full">
+                                <div>
+                                    <h3 class="font-medium">Insider Pro</h3>
+                                    <p class="text-sm text-gray-400">Tech Insider</p>
+                                </div>
+                            </div>
+                            <button class="text-purple-500 hover:text-purple-400">Follow</button>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <img src="https://i.pravatar.cc/150?img=36" alt="User" class="w-10 h-10 rounded-full">
+                                <div>
+                                    <h3 class="font-medium">Gossip Queen</h3>
+                                    <p class="text-sm text-gray-400">Entertainment</p>
+                                </div>
+                            </div>
+                            <button class="text-purple-500 hover:text-purple-400">Follow</button>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <img src="https://i.pravatar.cc/150?img=22" alt="User" class="w-10 h-10 rounded-full">
+                                <div>
+                                    <h3 class="font-medium">Business Buzz</h3>
+                                    <p class="text-sm text-gray-400">Startup Scout</p>
+                                </div>
+                            </div>
+                            <button class="text-purple-500 hover:text-purple-400">Follow</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <button class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow">
+        <i class="fas fa-plus text-2xl"></i>
+    </button>
+
+    <script src="js/app.js"></script>
+    <script src="js/gossip.js"></script>
+</body>
+</html>
